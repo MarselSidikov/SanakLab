@@ -1,8 +1,7 @@
 package ru.sank.graph;
 
 
-import ru.sank.graph.Graph;
-import ru.sank.graph.GraphMatrixImpl;
+import ru.sank.list.List;
 
 public class Program {
     public static void main(String[] args) {
@@ -27,9 +26,9 @@ public class Program {
 
         graph.showNeighbors(1);
 
-        int n[] = graph.getNeighbors(1);
-        for (int i = 0; i < n.length; i++) {
-            System.out.print(n[i] + " ");
+        List neighbors = graph.getNeighbors(1);
+        for (int i = 0; i < neighbors.size(); i++) {
+            System.out.print(neighbors.getByIndex(i)+ " ");
         }
     }
 }

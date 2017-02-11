@@ -1,5 +1,7 @@
 package ru.sank.graph;
 
+import ru.sank.list.List;
+
 /**
  * Интерфейс - граф, описывает множество вершин и множество ребер
  */
@@ -27,7 +29,7 @@ public interface Graph {
     void showNeighbors(int vertex);
 
     // получить МАССИВ всех соседей вершины
-    int[] getNeighbors(int vertex);
+    List getNeighbors(int vertex);
 
     // получить группу вершины - компоненту связности
     int[] neighborsGroup(int vertex);

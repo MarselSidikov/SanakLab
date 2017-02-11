@@ -1,5 +1,8 @@
 package ru.sank.graph;
 
+import ru.sank.list.ArrayList;
+import ru.sank.list.List;
+
 // реализация графа - матрица смежности
 public class GraphMatrixImpl implements Graph {
 
@@ -84,7 +87,8 @@ public class GraphMatrixImpl implements Graph {
         }
     }
 
-    public int[] getNeighbors(int vertex) {
+    public List getNeighbors(int vertex) {
+        /**
         // мы создаем массив для соседей вершины
         // чтобы не выделять лишнюю память, мы спрашиваем - сколько всего соседей у вершины?
         int neighborsCount = vertexDegree(vertex);
@@ -93,14 +97,20 @@ public class GraphMatrixImpl implements Graph {
         int neighbors[] = new int[neighborsCount];
 
         int k = 0;
+        **/
+
+        List neighbors = new ArrayList();
 
         // бежим по всем вершинам
         for (int i = 1; i < MAX_VERTEX_COUNT; i++) {
             // если вершина vertex имеет соседа вершину i
             if (matrix[vertex][i] == 1) {
+                /**
                 // закидываем ее в массив соседей
                 neighbors[k] = i;
                 k++;
+                **/
+                neighbors.add(i);
             }
         }
 
