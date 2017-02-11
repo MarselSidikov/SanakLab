@@ -1,5 +1,8 @@
-package ru.sank;
+package ru.sank.graph;
 
+
+import ru.sank.graph.Graph;
+import ru.sank.graph.GraphMatrixImpl;
 
 public class Program {
     public static void main(String[] args) {

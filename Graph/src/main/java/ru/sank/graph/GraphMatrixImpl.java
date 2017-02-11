@@ -1,4 +1,4 @@
-package ru.sank;
+package ru.sank.graph;
 
 // реализация графа - матрица смежности
 public class GraphMatrixImpl implements Graph {
