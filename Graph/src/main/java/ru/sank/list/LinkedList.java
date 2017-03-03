@@ -5,6 +5,7 @@ public class LinkedList implements List {
 
     // Узел - первый узел списка
     private Node head;
+    // последний узел списка
     private Node tail;
 
     // размер списка
@@ -38,12 +39,18 @@ public class LinkedList implements List {
      * @param element - сам элемент
      */
     public void add(int element) {
+        // создаем узел
         Node newNode = new Node();
         newNode.value = element;
+        // если список пуст
         if (head == null) {
+            // созданный узел является и началом и концом списка
             head = newNode;
             tail = newNode;
-        } else {
+        }
+        // если в списке есть элементы
+        else {
+            // новый узел становится последним
             tail.next = newNode;
             tail = tail.next;
         }
@@ -102,6 +109,76 @@ public class LinkedList implements List {
     }
 
     public int getIndexOf(int element) {
-        return 0;
+        // проверяете, не равно ли значение текущего
+        // элемента списка искомому, если да - то возвращаем индекс
+        // как считать индекс? завести переменную index и на каждом шаге увеличивать
+
+        // заводите указатель на текущий элемент
+        Node current = head;
+        int index = 0;
+        // пока не дошли до конца списка
+        while (current != null) {
+            if (current.value == element) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+
+        return -1;
+    }
+
+    public static LinkedList merge(LinkedList aList, LinkedList bList) {
+        // два указателя на начало обоих списков
+        Node a = aList.head;
+        Node b = bList.head;
+
+        // результирующий список
+        LinkedList result = new LinkedList();
+
+        while (a != null && b != null) {
+            if (a.value < b.value) {
+                result.add(a.value);
+                a = a.next;
+            } else {
+                result.add(b.value);
+                b = b.next;
+            }
+        }
+
+        while (a != null) {
+            result.add(a.value);
+            a = a.next;
+        }
+
+        while (b != null) {
+            result.add(b.value);
+            b = b.next;
+        }
+
+        return result;
+    }
+
+    public static void sort(LinkedList list) {
+        // массив связных списков
+        LinkedList lists[] = new LinkedList[32];
+        for (int i = 0; i < lists.length; i++) {
+            lists[i] = new LinkedList();
+        }
+        // количество фактически используемых связных списокв
+        int listsCount = 0;
+
+        // первый узел списка
+        Node current = list.head;
+
+        // пока не дошли до конца связного списка исходного
+        while (current != null) {
+            if (listsCount < 2) {
+                lists[listsCount].add(current.value);
+                listsCount++;
+            }
+            // остальные
+        }
+
     }
 }
