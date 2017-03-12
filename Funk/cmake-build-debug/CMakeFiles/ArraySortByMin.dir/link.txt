@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/ArraySortByMin.dir/main.cpp.o  -o ArraySortByMin 

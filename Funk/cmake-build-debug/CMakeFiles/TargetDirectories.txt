@@ -1,0 +1,3 @@
+/home/soti/CLionProjects/Funk/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/soti/CLionProjects/Funk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/soti/CLionProjects/Funk/cmake-build-debug/CMakeFiles/ArraySortByMin.dir
